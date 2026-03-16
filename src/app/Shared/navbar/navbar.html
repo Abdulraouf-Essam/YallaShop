@@ -1,0 +1,28 @@
+<nav
+    class="fixed top-0 w-full z-50 px-6 flex items-center justify-between backdrop-blur-md bg-white/30 border-b border-white/20">
+    <div>
+        <img src="assets/SVG/YallaShopLogo.svg" class="w-[160px]" alt="">
+    </div>
+
+    <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest text-slate-700">
+        <a routerLink="/home" class="hover:text-black transition">Home</a>
+        <a href="#" class="hover:text-black transition">Collections</a>
+        <a href="#" class="hover:text-black transition">Sustain</a>
+        <a href="#" class="hover:text-black transition">Gallery</a>
+        <a href="#" class="hover:text-black transition">Community</a>
+    </div>
+
+    <div class="flex items-center space-x-6">
+        <div class="relative hidden lg:block">
+            <input type="text" pInputText placeholder="Search"
+                class="w-64 pl-4 pr-10 py-2 rounded-full border-none bg-white/50 focus:bg-white transition-all shadow-sm outline-none" />
+            <i class="pi pi-search absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        </div>
+
+        <div class="flex items-center space-x-4 text-xl text-slate-700">
+            <i class="pi pi-user cursor-pointer hover:text-black"></i>
+            <i class="pi pi-shopping-cart cursor-pointer hover:text-black" pBadge value="2" severity="info"></i>
+            <i class="pi pi-heart cursor-pointer hover:text-black"></i>
+        </div>
+    </div>
+</nav>
