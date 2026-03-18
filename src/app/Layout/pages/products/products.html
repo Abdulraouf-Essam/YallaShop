@@ -1,0 +1,120 @@
+<div
+    class="relative w-full py-20 px-6 sm:px-12 md:px-20 lg:px-24 bg-gradient-to-r from-[#e9f6f1] via-white to-[#fffcf2]">
+
+    <div
+        class="max-w-7xl mx-auto relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+
+
+
+        <div>
+            @if (currentCategory()) {
+            <h1 class="text-[#597e80] font-black text-5xl md:text-6xl tracking-tighter uppercase drop-shadow-sm">
+                {{ currentCategory() }}
+            </h1>
+            }
+            @if(!currentCategory()) {
+            <h1 class="text-[#597e80] font-black text-5xl md:text-6xl tracking-tighter uppercase drop-shadow-sm">
+                The Collection
+            </h1>
+            }
+            <p class="text-gray-500 mt-3 text-lg font-medium">
+                Explore our latest arrivals designed for the modern creator.
+            </p>
+        </div>
+        <div class="flex-1 max-w-md">
+            <div class="relative">
+                <input type="text" [ngModel]="searchQuery()" (ngModelChange)="onSearch($event)"
+                    placeholder="Search products..."
+                    class="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 bg-white/80 focus:bg-white transition-all shadow-sm outline-none focus:ring-2 focus:ring-[#16E4CE] focus:border-transparent" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </div>
+        </div>
+        <div>
+            <a (click)="goBack()"
+                class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-400 text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    @if (isLoading()) {
+    <div class="flex justify-center items-center h-64">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#16E4CE]"></div>
+    </div>
+    }
+
+    @if (!isLoading()) {
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
+
+        @for (product of products(); track $index) {
+        <div
+            class="group relative bg-white rounded-[2rem] rounded-tr-[4rem] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(89,126,128,0.25)] transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2 border border-gray-100">
+
+            <div class="relative h-64 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                <img [src]="product.thumbnail" [alt]="product.title"
+                    class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-md">
+
+                <div
+                    class="absolute top-4 right-4 bg-white/60 backdrop-blur-md border border-white/40 text-[#597e80] font-black text-sm py-1.5 px-4 rounded-full shadow-lg">
+                    ${{ product.price }}
+                </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-bold text-[#16E4CE] uppercase tracking-wider mb-2">
+                    {{ product.category }}
+                </span>
+
+                <a [routerLink]="['/home/product', product.id]"
+                    class="text-xl font-extrabold text-gray-900 mb-4 line-clamp-2 leading-tight group-hover:text-[#597e80] transition-colors cursor-pointer">
+                    {{ product.title }}
+                </a>
+
+                <div class="mt-auto pt-5 border-t border-gray-100">
+
+                    <button (click)="addToCart(product)"
+                        class="w-full bg-white border-2 border-[#16E4CE] hover:bg-[#16E4CE] text-gray-900 text-sm font-bold py-3.5 px-6 rounded-full uppercase tracking-wider transition-all duration-300 flex justify-center items-center gap-2 group/btn shadow-sm hover:shadow-[#16E4CE]/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor"
+                            class="w-5 h-5 text-[#16E4CE] group-hover/btn:text-gray-900 transition-colors">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                        Add to Cart
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+
+    @if (!isLoading() && products().length < totalProducts()) { <div class="flex justify-center mt-16">
+        <button (click)="loadMore()" [disabled]="isMoreLoading()"
+            class="mt-10 bg-[#16E4CE] hover:bg-[#13cabb] text-gray-900 text-sm md:text-base font-bold py-4 px-10 rounded-full uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-[#16E4CE]/40 hover:-translate-y-1">
+
+            @if (isMoreLoading()) {
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+            </svg>
+            Loading...
+            } @else {
+            Load More Products
+            }
+        </button>
+</div>
+}
+}
+</div>

@@ -1,1 +1,69 @@
-<p>login works!</p>
+<div class="min-h-screen w-full flex items-center justify-center bg-[#597e80] font-sans relative overflow-hidden px-4">
+
+    <div
+        class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-[#3f5f61] rounded-full mix-blend-multiply filter blur-3xl opacity-70">
+    </div>
+    <div
+        class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-[#76a5a7] rounded-full mix-blend-multiply filter blur-3xl opacity-70">
+    </div>
+    <div
+        class="relative z-10 w-full max-w-xl bg-white/10 backdrop-blur-2xl border border-white/20 p-8 sm:p-10 rounded-[2.5rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.25)]">
+
+        <div class="text-center mb-10">
+            <h2 class="text-white font-black text-4xl tracking-tight drop-shadow-md mb-2">
+                WELCOME BACK.
+            </h2>
+            <p class="text-white/80 text-sm font-medium">
+                Sign in to continue to your creative space.
+            </p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+            <div>
+                <label for="username" class="block text-white/90 text-sm font-bold mb-2 ml-1">Email</label>
+                <input type="text" id="username" formControlName="username" placeholder="Enter your email"
+                    class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
+                <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+                    class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
+                    Please enter a valid email address.
+                </div>
+            </div>
+
+            <div>
+                <label for="password" class="block text-white/90 text-sm font-bold mb-2 ml-1">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                    class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+                    class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
+                    Password must be at least 6 characters.
+                </div>
+            </div>
+
+            <!-- <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center text-white/80 cursor-pointer hover:text-white transition-colors">
+                    <input type="checkbox" formControlName="rememberMe"
+                        class="w-4 h-4 rounded border-white/30 bg-white/10 text-[#16E4CE] focus:ring-[#16E4CE] focus:ring-offset-0 mr-2 cursor-pointer">
+                    <span class="font-medium">Remember me</span>
+                </label>
+                <a href="#" class="text-[#16E4CE] hover:text-white font-bold transition-colors">
+                    Forgot password?
+                </a>
+            </div> -->
+
+            <button type="submit" [disabled]="loginForm.invalid && loginForm.touched"
+                class="w-full mt-8 bg-[#16E4CE] hover:bg-[#13cabb] disabled:opacity-50 disabled:hover:bg-[#16E4CE] disabled:hover:translate-y-0 text-gray-900 text-sm font-bold py-4 px-10 rounded-full uppercase tracking-wider transition-all duration-300 shadow-[0_4px_14px_0_rgba(22,228,206,0.39)] hover:shadow-[0_6px_20px_rgba(22,228,206,0.23)] hover:-translate-y-1">
+                Sign In
+            </button>
+
+        </form>
+
+        <div class="mt-8 text-center text-sm text-white/70">
+            Don't have an account?
+            <a routerLink="/auth/register" class="text-white font-bold hover:text-[#16E4CE] transition-colors">
+                Create one now
+            </a>
+        </div>
+
+    </div>
+</div>
