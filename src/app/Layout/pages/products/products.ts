@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface Product {
   id: number;
@@ -54,7 +55,7 @@ export interface Meta {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink, FormsModule, TranslateModule],
   templateUrl: './products.html',
 })
 export class Products implements OnInit {

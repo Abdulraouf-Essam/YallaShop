@@ -10,10 +10,10 @@
 
         <div class="text-center mb-8">
             <h2 class="text-white font-black text-4xl tracking-tight drop-shadow-md mb-2">
-                CREATE ACCOUNT.
+                {{ 'REGISTER.TITLE' | translate }}
             </h2>
             <p class="text-white/80 text-sm font-medium">
-                Join us and start your creative journey.
+                {{ 'REGISTER.SUBTITLE' | translate }}
             </p>
         </div>
 
@@ -21,52 +21,52 @@
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label for="firstName" class="block text-white/90 text-sm font-bold mb-2 ml-1">First Name</label>
-                    <input type="text" id="firstName" formControlName="firstName" placeholder="First name"
+                    <label for="firstName" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'REGISTER.FIRST_NAME' | translate }}</label>
+                    <input type="text" id="firstName" formControlName="firstName" placeholder="{{ 'REGISTER.FIRST_NAME_PLACEHOLDER' | translate }}"
                         class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                     <div *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid"
                         class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                        First name is required.
+                        {{ 'REGISTER.FIRST_NAME_ERROR' | translate }}
                     </div>
                 </div>
                 <div>
-                    <label for="lastName" class="block text-white/90 text-sm font-bold mb-2 ml-1">Last Name</label>
-                    <input type="text" id="lastName" formControlName="lastName" placeholder="Last name"
+                    <label for="lastName" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'REGISTER.LAST_NAME' | translate }}</label>
+                    <input type="text" id="lastName" formControlName="lastName" placeholder="{{ 'REGISTER.LAST_NAME_PLACEHOLDER' | translate }}"
                         class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                     <div *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid"
                         class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                        Last name is required.
+                        {{ 'REGISTER.LAST_NAME_ERROR' | translate }}
                     </div>
                 </div>
             </div>
 
             <div>
-                <label for="email" class="block text-white/90 text-sm font-bold mb-2 ml-1">Email</label>
-                <input type="email" id="email" formControlName="email" placeholder="Enter your email"
+                <label for="email" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'REGISTER.EMAIL' | translate }}</label>
+                <input type="email" id="email" formControlName="email" placeholder="{{ 'REGISTER.EMAIL_PLACEHOLDER' | translate }}"
                     class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                 <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
                     class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                    Please enter a valid email address.
+                    {{ 'REGISTER.EMAIL_ERROR' | translate }}
                 </div>
             </div>
 
             <div>
-                <label for="username" class="block text-white/90 text-sm font-bold mb-2 ml-1">Username</label>
-                <input type="text" id="username" formControlName="username" placeholder="Choose a username"
+                <label for="username" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'REGISTER.USERNAME' | translate }}</label>
+                <input type="text" id="username" formControlName="username" placeholder="{{ 'REGISTER.USERNAME_PLACEHOLDER' | translate }}"
                     class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                 <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid"
                     class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                    Username is required.
+                    {{ 'REGISTER.USERNAME_ERROR' | translate }}
                 </div>
             </div>
 
             <div>
-                <label for="password" class="block text-white/90 text-sm font-bold mb-2 ml-1">Password</label>
-                <input type="password" id="password" formControlName="password" placeholder="Create a password"
+                <label for="password" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'REGISTER.PASSWORD' | translate }}</label>
+                <input type="password" id="password" formControlName="password" placeholder="{{ 'REGISTER.PASSWORD_PLACEHOLDER' | translate }}"
                     class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                 <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid"
                     class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                    Password must be at least 6 characters.
+                    {{ 'REGISTER.PASSWORD_ERROR' | translate }}
                 </div>
             </div>
 
@@ -76,15 +76,15 @@
 
             <button type="submit" [disabled]="registerForm.invalid || isLoading"
                 class="w-full mt-8 bg-[#16E4CE] hover:bg-[#13cabb] disabled:opacity-50 disabled:hover:bg-[#16E4CE] disabled:hover:translate-y-0 text-gray-900 text-sm font-bold py-4 px-10 rounded-full uppercase tracking-wider transition-all duration-300 shadow-[0_4px_14px_0_rgba(22,228,206,0.39)] hover:shadow-[0_6px_20px_rgba(22,228,206,0.23)] hover:-translate-y-1">
-                {{ isLoading ? 'Creating Account...' : 'Create Account' }}
+                {{ isLoading ? ('REGISTER.CREATING' | translate) : ('REGISTER.BUTTON' | translate) }}
             </button>
 
         </form>
 
         <div class="mt-8 text-center text-sm text-white/70">
-            Already have an account?
+            {{ 'REGISTER.HAS_ACCOUNT' | translate }}
             <a (click)="goToLogin()" class="text-white font-bold hover:text-[#16E4CE] transition-colors cursor-pointer">
-                Sign in now
+                {{ 'REGISTER.SIGN_IN' | translate }}
             </a>
         </div>
 

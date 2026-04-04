@@ -1,0 +1,78 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "PRODUCTS": "Products",
+    "CATEGORIES": "Categories",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "WELCOME": "Welcome",
+    "ENGLISH": "English",
+    "ARABIC": "العربية",
+    "RUSSIAN": "Русский"
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "DESIGN.<br/>INNOVATE.<br/>REPEAT.",
+      "SUBTITLE": "Crafting the Future of Lifestyle.<br/>For the Creative in All of Us.",
+      "BUTTON": "Discover the new"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categories",
+      "MENS_WATCHES": "Mens watches",
+      "MENS_SHIRTS": "Mens shirts",
+      "WOMENS_BAGS": "Womens bags",
+      "SMART_PHONES": "Smart phones",
+      "VIEW": "VIEW",
+      "VIEW_ALL": "View All Categories"
+    }
+  },
+  "PRODUCTS": {
+    "TITLE": "The Collection",
+    "SUBTITLE": "Explore our latest arrivals designed for the modern creator.",
+    "SEARCH": "Search products...",
+    "ADD_TO_CART": "Add to Cart",
+    "LOAD_MORE": "Load More Products",
+    "LOADING": "Loading..."
+  },
+  "CATEGORIES": {
+    "TITLE": "The Collection",
+    "SUBTITLE": "Explore our latest arrivals designed for the modern creator.",
+    "VIEW": "VIEW"
+  },
+  "LOGIN": {
+    "TITLE": "WELCOME BACK.",
+    "SUBTITLE": "Sign in to continue to your creative space.",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "EMAIL_ERROR": "Please enter a valid email address.",
+    "PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "PASSWORD_ERROR": "Password must be at least 6 characters.",
+    "BUTTON": "Sign In",
+    "NO_ACCOUNT": "Don't have an account?",
+    "CREATE_ACCOUNT": "Create one now"
+  },
+  "REGISTER": {
+    "TITLE": "CREATE ACCOUNT.",
+    "SUBTITLE": "Join us and start your creative journey.",
+    "FIRST_NAME": "First Name",
+    "FIRST_NAME_PLACEHOLDER": "First name",
+    "FIRST_NAME_ERROR": "First name is required.",
+    "LAST_NAME": "Last Name",
+    "LAST_NAME_PLACEHOLDER": "Last name",
+    "LAST_NAME_ERROR": "Last name is required.",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "EMAIL_ERROR": "Please enter a valid email address.",
+    "USERNAME": "Username",
+    "USERNAME_PLACEHOLDER": "Choose a username",
+    "USERNAME_ERROR": "Username is required.",
+    "PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Create a password",
+    "PASSWORD_ERROR": "Password must be at least 6 characters.",
+    "BUTTON": "Create Account",
+    "CREATING": "Creating Account...",
+    "HAS_ACCOUNT": "Already have an account?",
+    "SIGN_IN": "Sign in now"
+  }
+}

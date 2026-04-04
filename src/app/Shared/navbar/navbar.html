@@ -4,41 +4,48 @@
         <img src="assets/SVG/YallaShopLogo.svg" class="w-[160px]" alt="">
     </div>
 
-    <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest text-slate-700">
-        <a routerLink="/home" class="hover:text-black transition">Home</a>
-        <a routerLink="/home/products" class="hover:text-black transition">Products</a>
-        <a routerLink="/home/categories" class="hover:text-black transition">Categories</a>
+    <div class="flex gap-8 text-sm font-semibold uppercase tracking-widest text-slate-700">
+        <a routerLink="/home" class="hover:text-black transition">{{ 'NAVBAR.HOME' | translate }}</a>
+        <a routerLink="/home/products" class="hover:text-black transition">{{ 'NAVBAR.PRODUCTS' | translate }}</a>
+        <a routerLink="/home/categories" class="hover:text-black transition">{{ 'NAVBAR.CATEGORIES' | translate }}</a>
     </div>
 
-    <div class="flex items-center space-x-6">
+    <div class="flex items-center gap-5">
+        <div class="relative">
+            <button (click)="languageService.toggleLangDropdown()"
+                class="flex items-center justify-center gap-2 px-3 py-2 rounded-full border border-slate-300 hover:bg-slate-100 transition">
+                <span class="text-sm font-semibold">{{ currentLang() === 'en' ? 'English' : currentLang() === 'ar' ?
+                    'العربية' : 'Русский' }}</span>
+                <i class="fa-solid fa-chevron-down fa-xs"></i>
+            </button>
+            @if (languageService.showLangDropdown()) {
+            <div
+                class="absolute top-full mt-1 right-0 bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden min-w-[140px]">
+                @for (lang of languageService.languages; track lang.code) {
+                <button (click)="languageService.onLangChange(lang.code)"
+                    class="w-full px-4 py-2 text-left text-sm hover:bg-slate-100 flex items-center space-x-2 transition">
+                    <span>{{ lang.name }}</span>
+                </button>
+                }
+            </div>
+            }
+        </div>
+
         @if (isLoggedIn && currentUser) {
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center gap-5">
             <span class="text-sm font-semibold text-slate-700">
-                Welcome, {{ currentUser.firstName }} {{ currentUser.lastName }}
+                {{ 'NAVBAR.WELCOME' | translate }}, {{ currentUser.firstName }} {{ currentUser.lastName }}
             </span>
             <button (click)="logout()"
                 class="bg-[#16E4CE] hover:bg-[#13cabb] text-gray-900 text-sm font-bold py-2 px-4 rounded-full uppercase tracking-wider transition-all duration-300">
-                Logout
+                {{ 'NAVBAR.LOGOUT' | translate }}
             </button>
         </div>
         } @else {
         <a routerLink="/auth/login"
             class="bg-[#16E4CE] hover:bg-[#13cabb] text-gray-900 text-sm font-bold py-2 px-4 rounded-full uppercase tracking-wider transition-all duration-300">
-            Login
+            {{ 'NAVBAR.LOGIN' | translate }}
         </a>
         }
     </div>
-    <!-- <div class="flex items-center space-x-6">
-        <div class="relative hidden lg:block">
-            <input type="text" pInputText placeholder="Search"
-                class="w-64 pl-4 pr-10 py-2 rounded-full border-none bg-white/50 focus:bg-white transition-all shadow-sm outline-none" />
-            <i class="pi pi-search absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-        </div>
-
-        <div class="flex items-center space-x-4 text-xl text-slate-700">
-            <i class="pi pi-user cursor-pointer hover:text-black"></i>
-            <i class="pi pi-shopping-cart cursor-pointer hover:text-black" pBadge value="2" severity="info"></i>
-            <i class="pi pi-heart cursor-pointer hover:text-black"></i>
-        </div>
-    </div> -->
 </nav>

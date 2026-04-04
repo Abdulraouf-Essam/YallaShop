@@ -6,10 +6,10 @@
 
         <div>
             <h1 class="text-[#597e80] font-black text-5xl md:text-6xl tracking-tighter uppercase drop-shadow-sm">
-                The Collection
+                {{ 'CATEGORIES.TITLE' | translate }}
             </h1>
             <p class="text-gray-500 mt-3 text-lg font-medium">
-                Explore our latest arrivals designed for the modern creator.
+                {{ 'CATEGORIES.SUBTITLE' | translate }}
             </p>
         </div>
 
@@ -43,7 +43,7 @@
 
                     <a [routerLink]="['/home/products', category.slug]"
                         class="inline-block self-start text-xs font-semibold text-gray-900 bg-white/70 px-8 py-3.5 rounded-full uppercase tracking-wider transition-colors hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 cursor-pointer">
-                        VIEW
+                        {{ 'CATEGORIES.VIEW' | translate }}
                     </a>
                 </div>
             </div>

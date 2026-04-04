@@ -11,57 +11,46 @@
 
         <div class="text-center mb-10">
             <h2 class="text-white font-black text-4xl tracking-tight drop-shadow-md mb-2">
-                WELCOME BACK.
+                {{ 'LOGIN.TITLE' | translate }}
             </h2>
             <p class="text-white/80 text-sm font-medium">
-                Sign in to continue to your creative space.
+                {{ 'LOGIN.SUBTITLE' | translate }}
             </p>
         </div>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
             <div>
-                <label for="username" class="block text-white/90 text-sm font-bold mb-2 ml-1">Email</label>
-                <input type="text" id="username" formControlName="username" placeholder="Enter your email"
+                <label for="username" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'LOGIN.EMAIL' | translate }}</label>
+                <input type="text" id="username" formControlName="username" placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}"
                     class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                 <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
                     class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                    Please enter a valid email address.
+                    {{ 'LOGIN.EMAIL_ERROR' | translate }}
                 </div>
             </div>
 
             <div>
-                <label for="password" class="block text-white/90 text-sm font-bold mb-2 ml-1">Password</label>
-                <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                <label for="password" class="block text-white/90 text-sm font-bold mb-2 ml-1">{{ 'LOGIN.PASSWORD' | translate }}</label>
+                <input type="password" id="password" formControlName="password" placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}"
                     class="w-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#16E4CE] focus:bg-white/20 transition-all duration-300">
                 <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
                     class="text-[#ffb3b3] text-xs mt-2 ml-1 font-medium">
-                    Password must be at least 6 characters.
+                    {{ 'LOGIN.PASSWORD_ERROR' | translate }}
                 </div>
             </div>
 
-            <!-- <div class="flex items-center justify-between text-sm">
-                <label class="flex items-center text-white/80 cursor-pointer hover:text-white transition-colors">
-                    <input type="checkbox" formControlName="rememberMe"
-                        class="w-4 h-4 rounded border-white/30 bg-white/10 text-[#16E4CE] focus:ring-[#16E4CE] focus:ring-offset-0 mr-2 cursor-pointer">
-                    <span class="font-medium">Remember me</span>
-                </label>
-                <a href="#" class="text-[#16E4CE] hover:text-white font-bold transition-colors">
-                    Forgot password?
-                </a>
-            </div> -->
-
             <button type="submit" [disabled]="loginForm.invalid && loginForm.touched"
                 class="w-full mt-8 bg-[#16E4CE] hover:bg-[#13cabb] disabled:opacity-50 disabled:hover:bg-[#16E4CE] disabled:hover:translate-y-0 text-gray-900 text-sm font-bold py-4 px-10 rounded-full uppercase tracking-wider transition-all duration-300 shadow-[0_4px_14px_0_rgba(22,228,206,0.39)] hover:shadow-[0_6px_20px_rgba(22,228,206,0.23)] hover:-translate-y-1">
-                Sign In
+                {{ 'LOGIN.BUTTON' | translate }}
             </button>
 
         </form>
 
         <div class="mt-8 text-center text-sm text-white/70">
-            Don't have an account?
+            {{ 'LOGIN.NO_ACCOUNT' | translate }}
             <a routerLink="/auth/register" class="text-white font-bold hover:text-[#16E4CE] transition-colors">
-                Create one now
+                {{ 'LOGIN.CREATE_ACCOUNT' | translate }}
             </a>
         </div>
 

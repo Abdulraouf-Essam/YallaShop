@@ -2,6 +2,7 @@ import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface Category {
   name: string;
@@ -13,7 +14,7 @@ export interface Category {
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './categories.html',
 })
 export class Categories {

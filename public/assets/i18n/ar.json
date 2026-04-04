@@ -1,0 +1,78 @@
+{
+  "NAVBAR": {
+    "HOME": "الرئيسية",
+    "PRODUCTS": "المنتجات",
+    "CATEGORIES": "الفئات",
+    "LOGIN": "تسجيل الدخول",
+    "LOGOUT": "تسجيل الخروج",
+    "WELCOME": "مرحباً",
+    "ENGLISH": "English",
+    "ARABIC": "العربية",
+    "RUSSIAN": "Русский"
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "تصميم.<br/>ابتكار.<br/>تكرار.",
+      "SUBTITLE": "صناعة مستقبل Lifestyle.<br/>للإبداع في كلٍّ منّا.",
+      "BUTTON": "اكتشف الجديد"
+    },
+    "CATEGORIES": {
+      "TITLE": "الفئات",
+      "MENS_WATCHES": "ساعات رجالية",
+      "MENS_SHIRTS": "قميص رجالي",
+      "WOMENS_BAGS": "شنج نسائية",
+      "SMART_PHONES": "هواتف ذكية",
+      "VIEW": "عرض",
+      "VIEW_ALL": "عرض جميع الفئات"
+    }
+  },
+  "PRODUCTS": {
+    "TITLE": "المجموعة",
+    "SUBTITLE": "استكشف أحدث وصولاتنا المصممة للمبدع الحديث.",
+    "SEARCH": "البحث عن المنتجات...",
+    "ADD_TO_CART": "إضافة للسلة",
+    "LOAD_MORE": "تحميل المزيد",
+    "LOADING": "جارِ التحميل..."
+  },
+  "CATEGORIES": {
+    "TITLE": "المجموعة",
+    "SUBTITLE": "استكشف أحدث وصولاتنا المصممة للمبدع الحديث.",
+    "VIEW": "عرض"
+  },
+  "LOGIN": {
+    "TITLE": "مرحباً بعودتك.",
+    "SUBTITLE": "سجّل دخولك للمكان الإبداعي الخاص بك.",
+    "EMAIL": "البريد الإلكتروني",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "EMAIL_ERROR": "الرجاء إدخال بريد إلكتروني صحيح.",
+    "PASSWORD": "كلمة المرور",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+    "PASSWORD_ERROR": "يجب أن تتكون كلمة المرور 6 أحرف على الأقل.",
+    "BUTTON": "دخول",
+    "NO_ACCOUNT": "ليس لديك حساب؟",
+    "CREATE_ACCOUNT": "أنشئ واحداً الآن"
+  },
+  "REGISTER": {
+    "TITLE": "إنشاء حساب.",
+    "SUBTITLE": "انضم إلينا وابدأ رحلتك الإبداعية.",
+    "FIRST_NAME": "الاسم الأول",
+    "FIRST_NAME_PLACEHOLDER": "الاسم الأول",
+    "FIRST_NAME_ERROR": "الاسم الأول مطلوب.",
+    "LAST_NAME": "الاسم الأخير",
+    "LAST_NAME_PLACEHOLDER": "الاسم الأخير",
+    "LAST_NAME_ERROR": "الاسم الأخير مطلوب.",
+    "EMAIL": "البريد الإلكتروني",
+    "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+    "EMAIL_ERROR": "الرجاء إدخال بريد إلكتروني صحيح.",
+    "USERNAME": "اسم المستخدم",
+    "USERNAME_PLACEHOLDER": "اختر اسم مستخدم",
+    "USERNAME_ERROR": "اسم المستخدم مطلوب.",
+    "PASSWORD": "كلمة المرور",
+    "PASSWORD_PLACEHOLDER": "أنشئ كلمة مرور",
+    "PASSWORD_ERROR": "يجب أن تتكون كلمة المرور 6 أحرف على الأقل.",
+    "BUTTON": "إنشاء حساب",
+    "CREATING": "جاري إنشاء الحساب...",
+    "HAS_ACCOUNT": "لديك حساب بالفعل؟",
+    "SIGN_IN": "دخول الآن"
+  }
+}
